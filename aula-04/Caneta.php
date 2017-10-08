@@ -5,15 +5,18 @@
         private $cor;
         private $tampada;
 
-        public function __construct(){ //O método contrutor pode ser o mesmo nome da classe ou __construct
-            $this->cor = "Blue";
-            $this->tampar();
+        public function __construct($m,$c,$p){ //O método contrutor pode ser o mesmo nome da classe ou __construct
+            $this->modelo = $m;
+            $this->cor = $c;
+            $this->ponta = $p;
+            $this->tampar();    
         }
 
         public function tampar(){
             $this->tampada = true;
         }
 
+        /*
         public function getModelo(){
             return $this->modelo;
         }
@@ -26,5 +29,7 @@
         public function setPonta($p){
             $this->ponta = $p;
         }
+        */
+                
     }
 ?>
