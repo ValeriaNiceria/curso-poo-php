@@ -102,12 +102,17 @@
             }
         }
         public function voltarPag(){
-            if($this->getPagAtual(0)){
+            if($this->getPagAtual() > 0){
+                $this->setPagAtual($this->getPagAtual() - 1);
+                if($this->getPagAtual() <= 0){
+                    $this->fechar();
+                    $this->pagAtual = 0;
+                    echo "Livro foi fechado, não possui mais páginas."; 
+                }
+            }else{
                 $this->fechar();
                 $this->pagAtual = 0;
                 echo "Livro foi fechado, não possui mais páginas.";
-            }else{
-                $this->setPagAtual($this->getPagAtual() - 1);
             }
         }
     }
